@@ -2,9 +2,10 @@ var express = require('express');
 var app = express();
 
 app.get('/', function(req, res) {
-  res.send({
-    "Output": "Hello World!"
-  });
+
+  const contents = fs.readFileSync(`index.html`);
+  console.log(contents)
+  res.send(contents);
 });
 
 app.post('/', function(req, res) {
